@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "prestart": "ng build",
     "start": "node server.js",
     "build": "ng build --prod",
     "test": "ng test",
@@ -24,6 +25,7 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "axios": "^0.16.2",
     "bootstrap": "^3.4.1",
     "core-js": "^2.4.1",
     "cpx": "^1.5.0",

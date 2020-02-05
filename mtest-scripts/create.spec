@@ -14,3 +14,6 @@ i) Create the shopping-edit component within the shopping-list
 ng g c shopping-list/shopping-edit --spec false
 
 
+export FIREBASE_AUTH_KEY=testkey
+
+
