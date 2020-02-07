@@ -16,4 +16,3 @@ ng g c shopping-list/shopping-edit --spec false
 
 export FIREBASE_AUTH_KEY=testkey
 
-

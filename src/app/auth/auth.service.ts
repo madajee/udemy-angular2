@@ -16,9 +16,30 @@ interface AuthResponseData {
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  signup(email: string, password: string) {
+  /*signup(email: string, password: string) {
     return this.http.post<AuthResponseData>
     ('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]',
+    {
+      email: email,
+      password: password,
+      returnSecureToken: true
+    })
+    .pipe(catchError(errorRes => {
+      let errorMessage = 'An unknown error occured!';
+      if (!errorRes.error || !errorRes.error.error) {
+        return _throw(errorMessage);
+      }
+      switch (errorRes.error.error.message) {
+        case 'EMAIL_EXISTS':
+          errorMessage = 'This email exists already';
+      }
+      return _throw(errorMessage);
+    }));
+  }*/
+
+  signup(email: string, password: string) {
+    return this.http.post<AuthResponseData>
+    ('api/auth/signup',
     {
       email: email,
       password: password,

@@ -8,14 +8,22 @@ function authAPI(app) {
   app.use(bodyParser.urlencoded({ extended: true }));
 
     // Allow Sign Up only for 10 Users (homeController)
-    app.get('/api/auth/signup', function(req, res) {
+    app.post('/api/auth/signup', function(req, res) {
         console.log("In Signup " + firebaseAuthKey);
-        axios.get("https://ng-course-recipe-book-54871.firebaseio.com/recipes.json")
+        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='+ firebaseAuthKey,
+        {
+          email: req.body.email,
+          password: req.body.password,
+          returnSecureToken: true
+        })
         .then(response => {
           console.log(response.data);
+          res.send(response.data);
         })
         .catch(error => {
-          console.log(error);
+          //console.log(error);
+          console.log(error.response.data);
+          res.status(500).send(error.response.data);
         });
     });
 
