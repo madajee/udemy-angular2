@@ -1,7 +1,6 @@
 var bodyParser = require('body-parser');
 var config = require('../config');
 const axios = require('axios');
-var bodyParser = require('body-parser');
 
 function authAPI(app) {
   var firebaseAuthKey = config.getAuthKey();
